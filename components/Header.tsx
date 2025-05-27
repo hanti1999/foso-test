@@ -3,10 +3,11 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import { NAV_ITEMS, SERVICE_ITEMS } from '@/contants';
 import { epilogue } from '@/app/layout';
+import Link from 'next/link';
 
 const Header = () => {
   return (
-    <div className={`h-[253px] ${epilogue.className}`}>
+    <div className='h-[253px]'>
       {/* Small one */}
       <div className='h-[28px] bg-gradient-to-r from-[#0D57C6] via-[#37CFFF] to-[#0F5ED6]'>
         <div className='flex flex-row 2xl:mx-[240px] py-1'>
@@ -84,7 +85,7 @@ const Header = () => {
         <div className='w-[263.7px] h-[50px] rounded-lg py-3 px-4 flex flex-row items-center gap-2 bg-[#0155c6] cursor-pointer'>
           <Image src='/icons/menu.svg' width={18} height={18} alt='menu-icon' />
           <div className='flex-1'>
-            <span className='font-bold text-white leading-5 align-middle'>
+            <span className='font-bold text-white leading-5 align-middle capitalize'>
               Danh mục sản phẩm
             </span>
           </div>
@@ -98,13 +99,13 @@ const Header = () => {
         <div className='flex-1 flex-row flex justify-between items-center'>
           <div className='flex flex-row items-center gap-5'>
             {NAV_ITEMS.map((item, index) => (
-              <a
+              <Link
                 key={index}
                 href={item.href}
-                className='leading-6 text-[#1C252E]'
+                className='leading-6 text-[#1C252E] capitalize font-medium'
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div className='flex flex-row items-center gap-5'>

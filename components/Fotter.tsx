@@ -5,11 +5,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className='relative 2xl:px-[240px] bg-[url(/footer-bg.jpg)] bg-cover bg-center h-[463.67px]'>
+    <div className='relative 2xl:mx-[240px] bg-[url(/footer-bg.jpg)] bg-cover bg-center h-[463.67px]'>
       <div className='absolute inset-0 bg-white opacity-65'></div>
-      <div
-        className={`relative z-10 py-[96px] flex items-start justify-between ${epilogue.className}`}
-      >
+      <div className='relative z-10 py-[96px] flex items-start justify-between'>
         <div>
           <h1 className='font-semibold uppercase text-brand-800'>
             Viet Hung Auto Production Trading Joint Stock Company

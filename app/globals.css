@@ -1,11 +1,18 @@
 @import 'tailwindcss';
+/* @plugin '@designbycode/tailwindcss-text-stroke' */
+/* @plugin 'tailwindcss-text-fill-stroke' */
+/* @config '../tailwind.config.js' */
 
 @theme {
+  --color-disabled: initial;
+  --color-disabled: #919eab;
   --color-secondary-50: #f3f2f2;
   --color-secondary: #637381;
   --color-brand-50: #e6f1ff;
+  --color-brand-100: #cde4fe;
   --color-brand-500: #0373f3;
   --color-brand-600: #025fca;
+  --color-brand-700: #024897;
   --color-brand-800: #013065;
   --color-primary: #1c252e;
 }

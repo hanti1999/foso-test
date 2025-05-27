@@ -10,22 +10,18 @@ const Jumbotron = () => {
           <div className='size-12'>
             <Image src='/icons/map.svg' alt='' width={48} height={48} />
           </div>
-          <p
-            className={`text-primary text-[28px] leading-[32px] font-medium ${epilogue.className}`}
-          >
+          <p className='text-primary text-[28px] leading-[32px] font-medium'>
             Xem hệ thống 88 cửa hàng trên toàn quốc
           </p>
         </div>
         <div className='w-max h-max'>
           <button className='flex flex-row items-center gap-3 bg-white rounded-full py-3 px-6'>
-            <p
-              className={`text-brand-600 text-2xl font-semibold align-middle ${publicSans.className}`}
-            >
+            <p className='text-brand-600 text-2xl font-semibold align-middle ${publicSans.className}'>
               Xem ngay
             </p>
             <div className='size-8'>
               <Image
-                src='/icons/chevron-right.svg'
+                src='/icons/arrow-right.svg'
                 alt=''
                 width={32}
                 height={32}
