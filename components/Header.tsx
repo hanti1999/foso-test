@@ -1,9 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import SearchBar from './SearchBar';
 import { NAV_ITEMS, SERVICE_ITEMS } from '@/contants';
-import { epilogue } from '@/app/layout';
-import Link from 'next/link';
 
 const Header = () => {
   return (

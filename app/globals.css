@@ -1,7 +1,4 @@
 @import 'tailwindcss';
-/* @plugin '@designbycode/tailwindcss-text-stroke' */
-/* @plugin 'tailwindcss-text-fill-stroke' */
-/* @config '../tailwind.config.js' */
 
 @theme {
   --color-disabled: initial;
@@ -15,6 +12,10 @@
   --color-brand-700: #024897;
   --color-brand-800: #013065;
   --color-primary: #1c252e;
+  --color-error-dark: #b71d18;
+  --color-error-darker: #7a0916;
+  --shadow-z8: 0px 8px 16px 0px rgba(145, 158, 171, 0.16);
+  --shadow-card: 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
 }
 
 body {

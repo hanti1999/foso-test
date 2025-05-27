@@ -1,6 +1,6 @@
-import { epilogue, publicSans } from '@/app/layout';
 import Image from 'next/image';
 import React from 'react';
+import { publicSans } from '@/app/layout';
 
 const Jumbotron = () => {
   return (
@@ -16,7 +16,9 @@ const Jumbotron = () => {
         </div>
         <div className='w-max h-max'>
           <button className='flex flex-row items-center gap-3 bg-white rounded-full py-3 px-6'>
-            <p className='text-brand-600 text-2xl font-semibold align-middle ${publicSans.className}'>
+            <p
+              className={`text-brand-600 text-[24px] font-semibold leading-[24px] ${publicSans.className}`}
+            >
               Xem ngay
             </p>
             <div className='size-8'>
