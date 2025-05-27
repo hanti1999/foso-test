@@ -14,23 +14,16 @@ const Jumbotron = () => {
             Xem hệ thống 88 cửa hàng trên toàn quốc
           </p>
         </div>
-        <div className='w-max h-max'>
-          <button className='flex flex-row items-center gap-3 bg-white rounded-full py-3 px-6'>
-            <p
-              className={`text-brand-600 text-[24px] font-semibold leading-[24px] ${publicSans.className}`}
-            >
-              Xem ngay
-            </p>
-            <div className='size-8'>
-              <Image
-                src='/icons/arrow-right.svg'
-                alt=''
-                width={32}
-                height={32}
-              />
-            </div>
-          </button>
-        </div>
+        <button className='flex flex-row items-center gap-3 bg-white rounded-full py-3 px-6 cursor-pointer'>
+          <p
+            className={`text-brand-600 text-[24px] font-semibold leading-[24px] ${publicSans.className}`}
+          >
+            Xem ngay
+          </p>
+          <div className='size-8'>
+            <Image src='/icons/arrow-right.svg' alt='' width={32} height={32} />
+          </div>
+        </button>
       </div>
     </div>
   );

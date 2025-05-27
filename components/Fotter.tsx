@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { LEGAL_ITEMS, SITEMAP_ITEMS } from '@/contants';
 
@@ -39,9 +40,9 @@ const Footer = () => {
           </h2>
           <div className='flex flex-col gap-3'>
             {SITEMAP_ITEMS?.map((item, index) => (
-              <a key={index} href={item?.href} className='text-secondary'>
+              <Link key={index} href={item?.href} className='text-secondary'>
                 {item?.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -52,9 +53,9 @@ const Footer = () => {
               _ Privacy Policy
             </a>
             {LEGAL_ITEMS?.map((item, index) => (
-              <a key={index} href={item?.href} className='text-secondary'>
+              <Link key={index} href={item?.href} className='text-secondary'>
                 {item?.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

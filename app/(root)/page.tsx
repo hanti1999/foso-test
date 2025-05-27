@@ -1,7 +1,7 @@
 import FeaturedProducts from '@/components/FeaturedProducts';
+import MainContent from '@/components/MainContent';
 import Breadcrumb from '@/components/Breadcrumb';
 import Featured from '@/components/Featured';
-import MainContent from '@/components/MainContent';
 
 export default function Home() {
   return (

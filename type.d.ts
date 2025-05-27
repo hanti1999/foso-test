@@ -5,3 +5,10 @@ interface IProduct {
   discountPercentage: number;
   thumbnail: string;
 }
+
+interface IProductRes {
+  limit: number;
+  products: IProduct[];
+  skip: number;
+  total: number;
+}
