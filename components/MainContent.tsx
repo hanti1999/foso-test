@@ -1,10 +1,13 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { Checkbox, Collapse, Select } from 'antd';
+import type { CollapseProps } from 'antd';
 import Image from 'next/image';
 import CheckedBadge from './CheckedBadge';
 import ProductCard from './ProductCard';
 import { selectSpecificData, SORT_ITEMS, url } from '@/contants';
 import useFetch from '@/customHooks/useGetData';
+import '@ant-design/v5-patch-for-react-19';
 
 const MainContent = () => {
   const [selected, setSelected] = useState<string>('relevance');
@@ -17,11 +20,101 @@ const MainContent = () => {
     refetch();
   }, [selected]);
 
+  const collapseItem: CollapseProps['items'] = [
+    {
+      key: 1,
+      label: (
+        <p className='font-semibold text-xl text-primary'>Danh mục sản phẩm</p>
+      ),
+      children: (
+        <div className='flex flex-col gap-3'>
+          <Checkbox>
+            <span className='font-medium text-sm text-primary'>Beauty</span>
+            <span className='text-sm text-secondary'> (24)</span>
+          </Checkbox>
+          <Checkbox>
+            <span className='font-medium text-sm text-primary'>Fragrances</span>
+            <span className='text-sm text-secondary'> (24)</span>
+          </Checkbox>
+          <Checkbox>
+            <span className='font-medium text-sm text-primary'>Furniture</span>
+            <span className='text-sm text-secondary'> (24)</span>
+          </Checkbox>
+        </div>
+      ),
+    },
+    {
+      key: 2,
+      label: <p className='font-semibold text-xl text-primary'>Khoảng giá</p>,
+      children: (
+        <div className='flex flex-col gap-2'>
+          <div className='rounded-sm border border-gray-200 p-2 cursor-pointer'>
+            <p className='text-sm text-center'>Dưới 10 $</p>
+          </div>
+          <div className='rounded-sm border border-gray-200 p-2 cursor-pointer'>
+            <p className='text-sm text-center'>10 $ - 99 $</p>
+          </div>
+          <div className='rounded-sm border border-gray-200 p-2 cursor-pointer'>
+            <p className='text-sm text-center'>100 $ - 500 $</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      key: 3,
+      label: <p className='font-semibold text-xl text-primary'>Thương hiệu</p>,
+      children: (
+        <div className='flex flex-col gap-3'>
+          <Checkbox>
+            <span className='font-medium text-sm text-primary'>
+              Annibale Colombo
+            </span>
+            <span className='text-sm text-secondary'> (24)</span>
+          </Checkbox>
+          <Checkbox>
+            <span className='font-medium text-sm text-primary'>Knoll</span>
+            <span className='text-sm text-secondary'> (24)</span>
+          </Checkbox>
+          <Checkbox>
+            <span className='font-medium text-sm text-primary'>
+              Bath Trends
+            </span>
+            <span className='text-sm text-secondary'> (24)</span>
+          </Checkbox>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className='flex gap-5'>
+      {/* Filter */}
       <div className='w-[315px] h-max rounded-lg bg-white py-3 flex flex-col gap-1'>
-        <p>Filter</p>
+        <div className='p-3 flex items-center gap-3 border-b border-gray-300'>
+          <Image src='/icons/filter-icon.svg' width={31} height={31} alt='' />
+          <p className='font-bold text-2xl align-middle text-brand-500'>
+            Bộ Lọc
+          </p>
+        </div>
+        <div className=' flex flex-col gap-4'>
+          <Collapse
+            bordered={false}
+            defaultActiveKey={1}
+            items={collapseItem}
+            expandIconPosition='end'
+            expandIcon={({ isActive }) => (
+              <Image
+                src='/icons/chevron-blue.svg'
+                width={24}
+                height={24}
+                alt=''
+                className={`${isActive ? '-rotate-90' : 'rotate-90'} mt-3`}
+              />
+            )}
+          />
+        </div>
       </div>
+      {/* Product list */}
       <div className='flex-1 flex flex-col gap-5'>
         <div className='flex items-center justify-between mb-2'>
           <p className='text-xl font-semibold text-primary'>
@@ -47,25 +140,27 @@ const MainContent = () => {
                 </button>
               ))}
             </div>
-            <div className='flex items-center justify-center pr-3 h-9 min-w-16 cursor-pointer'>
-              <select
-                name='sort-price'
-                id='sort-price'
-                className='font-medium text-sm pl-[9px] pr-2.5 text-primary outline-none appearance-none'
-                value={selected}
-                onChange={(e) => setSelected(e.target.value)}
-              >
-                <option value=''>Sắp xếp theo giá</option>
-                <option value='price&order=asc'>Giá: Thấp → Cao</option>
-                <option value='price&order=desc'>Giá: Cao → Thấp</option>
-              </select>
-              <Image
-                src='/icons/chevron-down-black.svg'
-                alt=''
-                width={14}
-                height={14}
-              />
-            </div>
+            <Select
+              variant='borderless'
+              onChange={(value: string) => setSelected(value)}
+              defaultValue='price'
+              style={{
+                width: 152,
+              }}
+              options={[
+                { value: 'price', label: 'Sắp Sếp Theo Giá' },
+                { value: 'price&order=asc', label: 'Giá: Thấp → Cao' },
+                { value: 'price&order=desc', label: 'Giá: Cao → Thấp' },
+              ]}
+              suffixIcon={
+                <Image
+                  src='/icons/chevron-down-black.svg'
+                  alt=''
+                  width={14}
+                  height={14}
+                />
+              }
+            />
           </div>
         </div>
         {loading ? (

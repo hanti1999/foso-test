@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Public_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
+import type { Metadata } from 'next';
+import { ConfigProvider } from 'antd';
 import './globals.css';
-import Header from '@/components/Header';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import Jumbotron from '@/components/Jumbotron';
+import Header from '@/components/Header';
 import Fotter from '@/components/Fotter';
 
 const geistSans = Geist({
@@ -35,10 +37,22 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${epilogue.className} antialiased`}>
-        <Header />
-        {children}
-        <Jumbotron />
-        <Fotter />
+        <AntdRegistry>
+          <ConfigProvider
+            theme={{
+              components: {
+                Collapse: {
+                  headerBg: '#fff',
+                },
+              },
+            }}
+          >
+            <Header />
+            {children}
+            <Jumbotron />
+            <Fotter />
+          </ConfigProvider>
+        </AntdRegistry>
       </body>
     </html>
   );
