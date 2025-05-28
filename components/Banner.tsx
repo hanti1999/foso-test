@@ -5,18 +5,18 @@ const Banner = () => {
   return (
     <div className='relative bg-[url(/banner-bg.png)] bg-cover bg-center h-[500px] rounded-tl-xl rounded-tr-xl overflow-hidden'>
       <div className='bg-linear-to-br from-[#FFF5CC] to-[#FFD666] rounded-tr-full rounded-br-full py-2.5 px-12 absolute top-10'>
-        <p className='uppercase font-bold text-2xl tracking-[5%] align-middle text-[#7A0916]'>
+        <p className='uppercase font-bold text-2xl tracking-wider align-middle text-[#7A0916]'>
           mới cực hot!
         </p>
       </div>
-      <div className='absolute top-[136px] left-[42px] flex flex-col gap-5'>
+      <div className='absolute top-[142px] left-[42px] flex flex-col gap-5'>
         <h2 className='font-extrabold text-[74px] leading-[100%] uppercase text-white text-stroke text-stroke-indigo-200 text-stroke-fill-indigo-600'>
           Tải app nhận quà
         </h2>
-        <p className='text-[#FFD666] text-[32px] font-medium '>
-          Tích điểm ngay trên app <b>SUNFIL1</b>
+        <p className='text-[#FFD666] text-[32px] leading-[48px] font-medium '>
+          Tích điểm ngay trên app <b className='font-extrabold'>SUNFIL1</b>
           <br />
-          <i>*100K = 10 điểm</i>
+          <i className=''>*100K = 10 điểm</i>
         </p>
       </div>
       <Image
@@ -31,7 +31,7 @@ const Banner = () => {
         width={911.14}
         height={515.63}
         alt=''
-        className='transform scale-x-[-1] absolute left-[764px] -top-[45px] rotate-[-24deg] z-0'
+        className='transform scale-x-[-1] absolute left-[784px] -top-[41px] rotate-[-23.6deg] z-0'
       />
     </div>
   );

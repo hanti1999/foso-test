@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
           </p>
         ) : (
           <>
-            <div className='flex gap-5'>
+            <div className='grid grid-cols-5 gap-5'>
               {data?.products?.map((item, index) => (
                 <ProductCard key={index} {...item} />
               ))}

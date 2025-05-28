@@ -15,7 +15,7 @@ const Featured = () => {
             <h2 className='leading-[120%] font-bold text-primary'>
               {item.title}
             </h2>
-            <p className='text-sm leading-[150%] text-secondary'>
+            <p className='text-sm font-medium leading-[150%] text-secondary'>
               {item.description}
             </p>
           </div>

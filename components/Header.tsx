@@ -9,8 +9,8 @@ const Header = () => {
     <div className='h-[253px]'>
       {/* Small one */}
       <div className='h-[28px] bg-gradient-to-r from-[#0D57C6] via-[#37CFFF] to-[#0F5ED6]'>
-        <div className='flex flex-row 2xl:mx-[240px] py-1'>
-          <div className='flex flex-1 flex-row items-center gap-2'>
+        <div className='max-w-[1440px] mx-auto flex flex-row items-center justify-between py-1'>
+          <div className='flex flex-row items-center gap-2'>
             <Image
               alt='sale-icon'
               src='/icons/Sale.png'
@@ -50,37 +50,37 @@ const Header = () => {
         </div>
       </div>
       {/* Navbar middle content */}
-      <div className='2xl:mx-[240px] h-[111px] my-6'>
+      <div className='max-w-[1440px] mx-auto h-[111px] my-6'>
         <div className='flex flex-row items-center gap-12'>
           <Image src='/logo_sunfil1.png' alt='' width={250} height={111} />
           <SearchBar />
           <div className='flex flex-row gap-8 w-max h-max'>
             <div className='flex flex-row items-center gap-2 cursor-pointer'>
               <button className='size-9 bg-[#d80027] rounded-full flex justify-center items-center'>
-                <Image src='/icons/star.svg' width={16} height={16} alt='' />
+                <Image src='/icons/star.svg' width={18} height={18} alt='' />
               </button>
-              <span>VI</span>
+              <span className='font-medium'>VI</span>
             </div>
             <div className='flex flex-row items-center gap-2 cursor-pointer relative'>
               <button className='size-9 flex justify-center items-center'>
                 <Image src='/icons/cart.svg' width={28} height={28} alt='' />
               </button>
-              <span>Giỏ hàng</span>
+              <span className='font-medium'>Giỏ hàng</span>
               <div className='size-6 bg-[#ff5630] absolute flex items-center justify-center -top-3 left-5.5 rounded-full'>
-                <span className='text-white text-xs'>12</span>
+                <p className='text-white text-xs leading-3'>12</p>
               </div>
             </div>
             <div className='flex flex-row items-center gap-2 cursor-pointer'>
               <button className='size-9 flex justify-center items-center'>
                 <Image src='/icons/user.svg' width={30} height={30} alt='' />
               </button>
-              <span>Tài khoản</span>
+              <span className='font-medium'>Tài khoản</span>
             </div>
           </div>
         </div>
       </div>
       {/* Navbar middle content */}
-      <div className='2xl:mx-[240px] h-max flex flex-row items-center gap-6'>
+      <div className='max-w-[1440px] mx-auto h-max flex flex-row items-center gap-6'>
         <div className='w-[263.7px] h-[50px] rounded-lg py-3 px-4 flex flex-row items-center gap-2 bg-[#0155c6] cursor-pointer'>
           <Image src='/icons/menu.svg' width={18} height={18} alt='menu-icon' />
           <div className='flex-1'>
@@ -101,7 +101,7 @@ const Header = () => {
               <Link
                 key={index}
                 href={item.href}
-                className='leading-6 text-[#1C252E] capitalize font-medium'
+                className='leading-6 text-[#1C252E] font-medium'
               >
                 {item.label}
               </Link>

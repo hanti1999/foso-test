@@ -5,11 +5,13 @@ import Featured from '@/components/Featured';
 
 export default function Home() {
   return (
-    <div className='flex flex-col gap-8 pt-6 2xl:px-[240px] bg-gray-100'>
-      <Breadcrumb />
-      <FeaturedProducts />
-      <MainContent />
-      <Featured />
+    <div className='bg-gray-100'>
+      <div className='flex flex-col gap-8 pt-6 max-w-[1440px] mx-auto'>
+        <Breadcrumb />
+        <FeaturedProducts />
+        <MainContent />
+        <Featured />
+      </div>
     </div>
   );
 }

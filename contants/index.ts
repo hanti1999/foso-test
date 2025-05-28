@@ -1,10 +1,10 @@
 export const NAV_ITEMS = [
   {
-    label: 'Về chúng tôi',
+    label: 'Về Chúng Tôi',
     href: '/',
   },
   {
-    label: 'Bài viết',
+    label: 'Bài Viết',
     href: '/',
   },
   {
@@ -12,26 +12,26 @@ export const NAV_ITEMS = [
     href: '/',
   },
   {
-    label: 'Liên hệ',
+    label: 'Liên Hệ',
     href: '/',
   },
 ];
 
 export const SERVICE_ITEMS = [
   {
-    label: 'Hỗ trợ 24/7',
+    label: 'Hỗ Trợ 24/7',
     icon: '/icons/clock.svg',
   },
   {
-    label: 'Miễn phí vận chuyển',
+    label: 'Miễn Phí Vận Chuyển',
     icon: '/icons/hand-money.svg',
   },
   {
-    label: 'Giao hàng nhanh 2h',
+    label: 'Giao Hàng Nhanh 2h',
     icon: '/icons/truck.svg',
   },
   {
-    label: '30 ngày đổi trả',
+    label: '30 Ngày Đổi Trả',
     icon: '/icons/refresh-circle.svg',
   },
 ];

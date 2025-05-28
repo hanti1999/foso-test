@@ -4,8 +4,8 @@ import { publicSans } from '@/app/layout';
 
 const Jumbotron = () => {
   return (
-    <div className='w-full h-[120px] bg-brand-50'>
-      <div className='2xl:mx-[240px] flex flex-row items-center justify-between h-full'>
+    <div className='bg-brand-50'>
+      <div className='mx-auto max-w-[1440px] flex flex-row items-center justify-between h-[120px]'>
         <div className='flex flex-row items-center gap-4 w-[1189px]'>
           <div className='size-12'>
             <Image src='/icons/map.svg' alt='' width={48} height={48} />

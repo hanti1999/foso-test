@@ -12,19 +12,21 @@ const SearchBar = () => {
         />
         <Image
           src='/icons/camera.svg'
-          width={28}
-          height={28}
+          width={26}
+          height={26}
           alt='camera-icon'
-          className='cursor-pointer'
+          className='cursor-pointer mr-0.5'
         />
       </div>
-      <button className='bg-[#0373f3] w-max px-6 py-3 h-full rounded-full flex justify-center items-center cursor-pointer'>
-        <Image
-          src='/icons/Search.svg'
-          width={28}
-          height={28}
-          alt='search-icon'
-        />
+      <button className='bg-[#0373f3] w-max px-6 py-2.5 h-max rounded-full flex justify-center items-center cursor-pointer'>
+        <div className='size-7'>
+          <Image
+            src='/icons/Search.svg'
+            width={26}
+            height={26}
+            alt='search-icon'
+          />
+        </div>
       </button>
     </form>
   );
