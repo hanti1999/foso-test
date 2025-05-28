@@ -2,11 +2,12 @@
 import Image from 'next/image';
 import ProductCard from './ProductCard';
 import Banner from './Banner';
+import { selectSpecificData, url } from '@/contants';
 import useFetch from '@/customHooks/useGetData';
 
 const FeaturedProducts = () => {
   const { data, loading, error } = useFetch<IProductRes>(
-    'https://dummyjson.com/products?limit=5'
+    `${url}?limit=5&sortBy=reviews&order=desc&${selectSpecificData}`
   );
 
   return (

@@ -4,6 +4,12 @@ interface IProduct {
   price: number;
   discountPercentage: number;
   thumbnail: string;
+  category: string;
+  brand: string;
+  meta: {
+    createdAt: string;
+    updatedAt: string;
+  };
 }
 
 interface IProductRes {

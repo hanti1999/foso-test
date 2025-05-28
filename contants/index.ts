@@ -93,3 +93,26 @@ export const FEATURED = [
     icon: '/icons/package.svg',
   },
 ];
+
+export const SORT_ITEMS = [
+  {
+    label: 'Liên quan',
+    key: 'relevance',
+  },
+  {
+    label: 'Bán chạy',
+    key: 'rating&order=desc',
+  },
+  {
+    label: 'Mới nhất',
+    key: 'updatedAt&order=desc',
+  },
+  {
+    label: 'Nổi bật',
+    key: 'reviews&order=desc',
+  },
+];
+
+export const url = 'https://dummyjson.com/products';
+export const selectSpecificData =
+  'select=title,price,brand,discountPercentage,thumbnail,category,meta';

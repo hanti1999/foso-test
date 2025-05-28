@@ -1,35 +1,21 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import CheckedBadge from './CheckedBadge';
 import ProductCard from './ProductCard';
+import { selectSpecificData, SORT_ITEMS, url } from '@/contants';
 import useFetch from '@/customHooks/useGetData';
 
-const SORT_ITEMS = [
-  {
-    label: 'Liên quan',
-    key: 'relevance',
-  },
-  {
-    label: 'Bán chạy',
-    key: 'top-sale',
-  },
-  {
-    label: 'Mới nhất',
-    key: 'latest',
-  },
-  {
-    label: 'Nổi bật',
-    key: 'featured',
-  },
-];
-
 const MainContent = () => {
-  const [selected, setSelected] = useState<string | null>('relevance');
-  const [priceSort, setPriceSort] = useState<string>('low-high');
-  const { data, loading, error } = useFetch<IProductRes>(
-    'https://dummyjson.com/products?limit=16'
+  const [selected, setSelected] = useState<string>('relevance');
+  const { data, loading, error, refetch } = useFetch<IProductRes>(
+    `${url}?limit=16&sortBy=${selected}&${selectSpecificData}`,
+    false
   );
+
+  useEffect(() => {
+    refetch();
+  }, [selected]);
 
   return (
     <div className='flex gap-5'>
@@ -66,11 +52,12 @@ const MainContent = () => {
                 name='sort-price'
                 id='sort-price'
                 className='font-medium text-sm pl-[9px] pr-2.5 text-primary outline-none appearance-none'
-                value={priceSort}
-                onChange={(e) => setPriceSort(e.target.value)}
+                value={selected}
+                onChange={(e) => setSelected(e.target.value)}
               >
-                <option value='low-high'>Giá: Thấp → Cao</option>
-                <option value='high-low'>Giá: Cao → Thấp</option>
+                <option value=''>Sắp xếp theo giá</option>
+                <option value='price&order=asc'>Giá: Thấp → Cao</option>
+                <option value='price&order=desc'>Giá: Cao → Thấp</option>
               </select>
               <Image
                 src='/icons/chevron-down-black.svg'
@@ -81,11 +68,21 @@ const MainContent = () => {
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-4 gap-5'>
-          {data?.products?.map((item, index) => (
-            <ProductCard key={index} {...item} />
-          ))}
-        </div>
+        {loading ? (
+          <div className='w-full'>
+            <Image src={'/icons/loading.svg'} width={25} height={25} alt='' />
+          </div>
+        ) : error ? (
+          <p className='text-red-500 text-center'>
+            {error.message || 'Something went wrong!'}
+          </p>
+        ) : (
+          <div className='grid grid-cols-4 gap-5'>
+            {data?.products?.map((item, index) => (
+              <ProductCard key={index} {...item} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

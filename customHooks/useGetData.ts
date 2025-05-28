@@ -41,7 +41,7 @@ const useFetch = <T>(url: string, autoFetch = true) => {
     if (autoFetch) {
       fetchData();
     }
-  }, []);
+  }, [url]);
 
   return { data, loading, error, refetch: fetchData, reset };
 };
