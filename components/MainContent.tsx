@@ -1,10 +1,10 @@
 'use client';
+import { Checkbox, Collapse, Empty, Select, Skeleton } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { Checkbox, Collapse, Select } from 'antd';
 import type { CollapseProps } from 'antd';
-import Image from 'next/image';
 import CheckedBadge from './CheckedBadge';
 import ProductCard from './ProductCard';
+import Icon from './Icon';
 import { selectSpecificData, SORT_ITEMS, url } from '@/contants';
 import useFetch from '@/customHooks/useGetData';
 import '@ant-design/v5-patch-for-react-19';
@@ -91,7 +91,7 @@ const MainContent = () => {
       {/* Filter */}
       <div className='w-[315px] h-max rounded-lg bg-white py-3 flex flex-col gap-1'>
         <div className='p-3 flex items-center gap-3 border-b border-gray-300'>
-          <Image src='/icons/filter-icon.svg' width={31} height={31} alt='' />
+          <Icon icon='filter-icon' size={31} />
           <p className='font-bold text-2xl align-middle text-brand-500'>
             Bộ Lọc
           </p>
@@ -103,11 +103,9 @@ const MainContent = () => {
             items={collapseItem}
             expandIconPosition='end'
             expandIcon={({ isActive }) => (
-              <Image
-                src='/icons/chevron-blue.svg'
-                width={24}
-                height={24}
-                alt=''
+              <Icon
+                icon='chevron-blue'
+                size={24}
                 className={`${isActive ? '-rotate-90' : 'rotate-90'} mt-3`}
               />
             )}
@@ -153,24 +151,15 @@ const MainContent = () => {
                 { value: 'price&order=desc', label: 'Giá: Cao → Thấp' },
               ]}
               suffixIcon={
-                <Image
-                  src='/icons/chevron-down-black.svg'
-                  alt=''
-                  width={14}
-                  height={14}
-                />
+                <Icon icon='chevron-blue' size={14} className='-rotate-90' />
               }
             />
           </div>
         </div>
         {loading ? (
-          <div className='w-full'>
-            <Image src={'/icons/loading.svg'} width={25} height={25} alt='' />
-          </div>
+          <Skeleton active />
         ) : error ? (
-          <p className='text-red-500 text-center'>
-            {error.message || 'Something went wrong!'}
-          </p>
+          <Empty />
         ) : (
           <div className='grid grid-cols-4 gap-5'>
             {data?.products?.map((item, index) => (

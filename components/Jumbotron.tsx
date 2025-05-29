@@ -1,15 +1,13 @@
-import Image from 'next/image';
 import React from 'react';
 import { publicSans } from '@/app/layout';
+import Icon from './Icon';
 
 const Jumbotron = () => {
   return (
     <div className='bg-brand-50'>
       <div className='mx-auto max-w-[1440px] flex flex-row items-center justify-between h-[120px]'>
         <div className='flex flex-row items-center gap-4 w-[1189px]'>
-          <div className='size-12'>
-            <Image src='/icons/map.svg' alt='' width={48} height={48} />
-          </div>
+          <Icon icon='map' size={48} />
           <p className='text-primary text-[28px] leading-[32px] font-medium'>
             Xem hệ thống 88 cửa hàng trên toàn quốc
           </p>
@@ -20,9 +18,7 @@ const Jumbotron = () => {
           >
             Xem ngay
           </p>
-          <div className='size-8'>
-            <Image src='/icons/arrow-right.svg' alt='' width={32} height={32} />
-          </div>
+          <Icon icon='arrow-right' size={32} />
         </button>
       </div>
     </div>

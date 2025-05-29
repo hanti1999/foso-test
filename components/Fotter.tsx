@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { LEGAL_ITEMS, SITEMAP_ITEMS } from '@/contants';
+import Icon from './Icon';
 
 const Footer = () => {
   return (
@@ -74,19 +75,14 @@ const Footer = () => {
             </h2>
             <div className='flex flex-col gap-3'>
               <button className='bg-primary w-[230px] h-16 rounded-xl flex justify-between px-5'>
-                <Image
-                  src='/icons/play-store.svg'
-                  alt=''
-                  width={30}
-                  height={30}
-                />
+                <Icon icon='play-store' size={30} />
                 <div className='h-full flex flex-col justify-center'>
                   <p className='text-sm text-white text-left'>Get it On</p>
                   <p className='font-semibold text-white'>Google Play Store</p>
                 </div>
               </button>
               <button className='bg-brand-500 w-[230px] h-16 rounded-xl flex justify-between px-5'>
-                <Image src='/icons/apple.svg' alt='' width={36} height={36} />
+                <Icon icon='apple' size={36} />
                 <div className='h-full flex flex-col justify-center'>
                   <p className='text-sm text-white text-left'>Download from</p>
                   <p className='font-semibold text-white'>Apple App Store</p>
@@ -96,17 +92,10 @@ const Footer = () => {
             <div className='flex justify-end'>
               <div className='flex flex-row items-center gap-2 cursor-pointer'>
                 <button className='bg-[#D80027] size-9 rounded-full flex justify-center items-center'>
-                  <Image src='/icons/star.svg' alt='' width={18} height={18} />
+                  <Icon icon='star' size={18} />
                 </button>
                 <span className='text-xl text-primary font-medium'>VI</span>
-                <div className='size-4 flex items-center justify-center'>
-                  <Image
-                    src='/icons/chevron-down-black.svg'
-                    alt=''
-                    width={12.5}
-                    height={6.5}
-                  />
-                </div>
+                <Icon icon='chevron-blue' size={16} className='-rotate-90' />
               </div>
             </div>
           </div>

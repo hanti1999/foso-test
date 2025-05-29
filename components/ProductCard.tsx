@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import Icon from './Icon';
 
 const ProductCard = ({
   title,
@@ -22,7 +23,7 @@ const ProductCard = ({
         </div>
         <div className='flex flex-col gap-4 px-6 pb-6 pt-4'>
           <div className='bg-gradient-to-r from-[#FFD666] to-[#FFAB00] px-2.5 py-0.5 rounded-full w-max flex items-center justify-center gap-1.5'>
-            <Image src='/icons/freefire.svg' width={16} height={16} alt='' />
+            <Icon icon='freefire' size={16} />
             <p className='text-error-darker text-sm font-semibold leading-[150%] align-middle'>
               Giá cực sốc
             </p>

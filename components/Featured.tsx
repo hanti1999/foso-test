@@ -1,6 +1,6 @@
 import React from 'react';
 import { FEATURED } from '@/contants';
-import Image from 'next/image';
+import Icon from './Icon';
 
 const Featured = () => {
   return (
@@ -10,7 +10,7 @@ const Featured = () => {
           key={index}
           className='flex items-center gap-4 rounded-xl px-3 py-4 bg-white flex-1 shadow-z8'
         >
-          <Image src={item?.icon} width={48} height={48} alt='' />
+          <Icon icon={item?.icon} size={48} />
           <div className='flex flex-col gap-2'>
             <h2 className='leading-[120%] font-bold text-primary'>
               {item.title}

@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono, Public_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
-import type { Metadata } from 'next';
 import { ConfigProvider } from 'antd';
+import type { Metadata } from 'next';
 import './globals.css';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import Jumbotron from '@/components/Jumbotron';

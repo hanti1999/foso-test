@@ -20,19 +20,19 @@ export const NAV_ITEMS = [
 export const SERVICE_ITEMS = [
   {
     label: 'Hỗ Trợ 24/7',
-    icon: '/icons/clock.svg',
+    icon: 'clock',
   },
   {
     label: 'Miễn Phí Vận Chuyển',
-    icon: '/icons/hand-money.svg',
+    icon: 'hand-money',
   },
   {
     label: 'Giao Hàng Nhanh 2h',
-    icon: '/icons/truck.svg',
+    icon: 'truck',
   },
   {
     label: '30 Ngày Đổi Trả',
-    icon: '/icons/refresh-circle.svg',
+    icon: 'refresh-circle',
   },
 ];
 
@@ -74,23 +74,23 @@ export const FEATURED = [
   {
     title: 'Miễn phí vận chuyển',
     description: 'Với hoá đơn từ 1 triệu',
-    icon: '/icons/money.svg',
+    icon: 'money',
   },
   {
     title: 'Hỗ trợ 24/7',
     description: 'Đội ngũ CSKH tận tình sẵn sàng lắng nghe và phục vụ tận tâm',
-    icon: '/icons/support.svg',
+    icon: 'support',
   },
   {
     title: 'Giao hàng nhanh 2h',
     description: 'Trong vòng bán kính 10km nội thành TP HCM',
-    icon: '/icons/delivery.svg',
+    icon: 'delivery',
   },
   {
     title: '30 ngày đổi trả',
     description:
       'Hoàn tiền 100% nếu phát sinh lỗi từ NSX hoặc đơn vị vận chuyển',
-    icon: '/icons/package.svg',
+    icon: 'package',
   },
 ];
 

@@ -1,4 +1,5 @@
 'use client';
+import { Empty, Skeleton } from 'antd';
 import Image from 'next/image';
 import ProductCard from './ProductCard';
 import Banner from './Banner';
@@ -15,13 +16,9 @@ const FeaturedProducts = () => {
       <Banner />
       <div className='bg-brand-600 rounded-bl-xl rounded-br-xl p-12 h-max relative'>
         {loading ? (
-          <div className='flex items-center justify-center w-full h-20'>
-            <Image src={'/icons/loading.svg'} width={25} height={25} alt='' />
-          </div>
+          <Skeleton active style={{ height: 495.8 }} />
         ) : error ? (
-          <p className='text-red-500 text-center'>
-            {error.message || 'Something went wrong!'}
-          </p>
+          <Empty />
         ) : (
           <>
             <div className='grid grid-cols-5 gap-5'>
